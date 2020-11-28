@@ -22,7 +22,7 @@ const start = (function numberGuesser() {
     }
     attempts--;
 
-    while (attempts > 0) {
+    if (attempts > 0) {
       if (userNum > randomNum) {
         alert('Загаданное число меньше, осталось попыток: ' + attempts);
         guessNumber();
@@ -37,13 +37,14 @@ const start = (function numberGuesser() {
           guessNumber();
         } else {return;}
       }
+    } else {
+      let answer = confirm('Попытки закончились, хотите сыграть еще?');
+      if (answer === true) {
+        attempts = 10;
+        randomNum = parseInt(Math.random() * 100);
+        guessNumber();
+      } else {return;}
     }
-    let answer = confirm('Попытки закончились, хотите сыграть еще?');
-    if (answer === true) {
-      attempts = 10;
-      randomNum = parseInt(Math.random() * 100);
-      guessNumber();
-    } else {return;}
   };
 })();
 
