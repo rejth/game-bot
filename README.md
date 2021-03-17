@@ -1,3 +1,3 @@
 # game-bot
 
-Игровой бот для практики JavaScript
+Simple browser game bot for JavaScript learning purpose
